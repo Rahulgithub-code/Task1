@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <form #formData='ngForm' (ngSubmit)="getData(formData.value)">
+            <input type="text" placeholder='id' [(ngModel)]='id' ngModel name="id">
+            <input type="text" placeholder='fname' [(ngModel)]='fname' ngModel name="fname">
+            <input type="text" placeholder='lname' [(ngModel)]='lname' ngModel name="lname">
+            <input type="number" placeholder='salary' [(ngModel)]='salary' ngModel name="salary">
+            <input type="text" placeholder='department' [(ngModel)]='department' ngModel name="department">
+            <button type="submit" class="btn btn-info">Save</button>
+            </form>
+    </div>
+    <div class="col-md-1"></div>
+</div>

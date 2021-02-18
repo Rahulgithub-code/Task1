@@ -1,0 +1,68 @@
+<!-- <table style="font-size: 15px; text-align: center;"> -->
+    <!-- <thead> -->
+        <!-- <tr>
+            <th>Action</th>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th>department</th>
+        </tr> -->
+        <div class="row">
+            <div class="col-sm-2">
+                <th>Action</th>
+            </div>
+            <div class="col-sm-2">
+                <th>Id</th>
+            </div>
+            <div class="col-sm-2">
+                <th>First Name</th>
+            </div>
+            <div class="col-sm-2">
+                <th>Last Name</th>
+            </div>
+            <div class="col-sm-2">
+                <th>Salary</th>
+            </div>
+            <div class="col-sm-2">
+                <th>Department</th>
+            </div>
+
+        </div>
+    <!-- </thead> -->
+    <!-- <tbody> -->
+        <!-- <tr *ngFor="let i of EmpDataC; index as j">
+            <td>
+                <a *ngIf="i.toggle==0" (click)='toggleOn(i.id,j)'>+</a>
+                <a *ngIf="i.toggle==1" (click)='toggleOff(i.id)'>-</a>
+            </td>
+            <td>{{i.id}}</td>
+            <td>{{i.fname}}</td>
+            <td>{{i.lname}}</td>
+            <td>{{i.salary}}</td>
+            <td>{{i.department}}</td>
+
+                    <ng-container *ngIf="i.toggle==1">
+                        <app-employee-details [cIndex]='pIndex'></app-employee-details>
+                    </ng-container>
+        </tr> -->
+        <div class="row" *ngFor="let i of EmpDataC; index as j">
+            <div class="col-sm-2">
+                <a *ngIf="i.toggle==0" (click)='toggleOn(i.id,j)'><i class="fas fa-plus"></i></a>
+            <a *ngIf="i.toggle==1" (click)='toggleOff(i.id)'><i class="fas fa-minus"></i></a>
+            </div>
+            <div class="col-sm-2">{{i.id}}</div>
+            <div class="col-sm-2">{{i.fname}}</div>
+            <div class="col-sm-2">{{i.lname}}</div>
+            <div class="col-sm-2">{{i.salary}}</div>
+            <div class="col-sm-2">{{i.department}}</div>
+            <div class="row">
+                <div class="col-sm-12" style="margin-left: 10px;">
+                    <ng-container *ngIf="i.toggle==1">
+                        <app-employee-details [cIndex]='pIndex'></app-employee-details>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    <!-- </tbody> -->
+<!-- </table> -->
