@@ -59,12 +59,10 @@ export class EmployeeDetailsComponent implements OnInit {
         }
       }
     }
-
     else if (!this.urlId) {
       debugger
       formData['id'] = this.emp.id
       this._empService.updateData(formData, this.cIndex)
     }
   }
-
 }
