@@ -19,6 +19,7 @@ export class EmpRecordService {
   }
   updateData(data:Emp,index){
    data['toggle']=0
+   
     this.EmpData.splice(index,1,data)
   }
 }

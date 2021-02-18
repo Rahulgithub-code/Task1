@@ -11,7 +11,7 @@ import { EmpRecordService } from '../emp-record.service';
 })
 export class EmployeeDetailsComponent implements OnInit {
   @Input() cIndex
-
+  idField = true
   emp: Emp = new Emp()
   urlId;
 
@@ -22,6 +22,7 @@ export class EmployeeDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.urlId = this._actRoute.snapshot.params['id']
     if (this.urlId == 0) {
+      this.idField = false
     }
     else if (this.urlId > 0) {
       //debugger
@@ -36,7 +37,6 @@ export class EmployeeDetailsComponent implements OnInit {
 
       this.emp = this._empService.EmpData[this.cIndex]
     }
-
   }
   getData(formData: Emp) {
     if (this.urlId == 0) {
@@ -44,26 +44,25 @@ export class EmployeeDetailsComponent implements OnInit {
       this._empService.pushData(formData);
       this._location.back()
     }
-    else if(this.urlId>0) {
+    else if (this.urlId > 0) {
       debugger
-      let j:any=0
-          for (let i of this._empService.EmpData){
-          if(i.id == this.urlId){
-            this._empService.updateData(formData, j)
-            this._route.navigate(['/employee_list'])
-            return
-          }
-          else{
-            j++
-          }
-
+      let j: any = 0
+      for (let i of this._empService.EmpData) {
+        if (i.id == this.urlId) {
+          formData['id']=this.emp.id
+          this._empService.updateData(formData, j)
+          this._route.navigate(['/employee_list'])
+          return
+        }
+        else {
+          j++
+        }
       }
-      
-      
     }
-    
-    else if(!this.urlId){
+
+    else if (!this.urlId) {
       debugger
+      formData['id'] = this.emp.id
       this._empService.updateData(formData, this.cIndex)
     }
   }

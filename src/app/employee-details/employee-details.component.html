@@ -2,7 +2,7 @@
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <form #formData='ngForm' (ngSubmit)="getData(formData.value)">
-            <input type="text" placeholder='id' [(ngModel)]='emp.id'  name="id">
+            <input type="text" placeholder='id' [(ngModel)]='emp.id'  name="id" [disabled]='idField'>
             <input type="text" placeholder='fname' [(ngModel)]='emp.fname'  name="fname">
             <input type="text" placeholder='lname' [(ngModel)]='emp.lname'  name="lname">
             <input type="number" placeholder='salary' [(ngModel)]='emp.salary'  name="salary">
