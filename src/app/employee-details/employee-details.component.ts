@@ -39,18 +39,32 @@ export class EmployeeDetailsComponent implements OnInit {
 
   }
   getData(formData: Emp) {
-
-    this._route.navigate['/employee_list']
-
-
     if (this.urlId == 0) {
+      debugger
       this._empService.pushData(formData);
       this._location.back()
     }
-    else {
-      //debugger
+    else if(this.urlId>0) {
+      debugger
+      let j:any=0
+          for (let i of this._empService.EmpData){
+          if(i.id == this.urlId){
+            this._empService.updateData(formData, j)
+            this._route.navigate(['/employee_list'])
+            return
+          }
+          else{
+            j++
+          }
+
+      }
+      
+      
+    }
+    
+    else if(!this.urlId){
+      debugger
       this._empService.updateData(formData, this.cIndex)
-      this._route.navigate(['/employee_list'])
     }
   }
 

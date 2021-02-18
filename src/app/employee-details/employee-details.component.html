@@ -2,11 +2,11 @@
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <form #formData='ngForm' (ngSubmit)="getData(formData.value)">
-            <input type="text" placeholder='id' [(ngModel)]='emp.id' ngModel name="id">
-            <input type="text" placeholder='fname' [(ngModel)]='emp.fname' ngModel name="fname">
-            <input type="text" placeholder='lname' [(ngModel)]='emp.lname' ngModel name="lname">
-            <input type="number" placeholder='salary' [(ngModel)]='emp.salary' ngModel name="salary">
-            <input type="text" placeholder='department' [(ngModel)]='emp.department' ngModel name="department">
+            <input type="text" placeholder='id' [(ngModel)]='emp.id'  name="id">
+            <input type="text" placeholder='fname' [(ngModel)]='emp.fname'  name="fname">
+            <input type="text" placeholder='lname' [(ngModel)]='emp.lname'  name="lname">
+            <input type="number" placeholder='salary' [(ngModel)]='emp.salary'  name="salary">
+            <input type="text" placeholder='department' [(ngModel)]='emp.department'  name="department">
             <button type="submit" class="btn btn-info">Save</button>
             </form>
     </div>
